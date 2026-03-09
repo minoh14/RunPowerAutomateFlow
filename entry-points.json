@@ -1,0 +1,93 @@
+{
+    "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+    "$id": "entry-points.json",
+    "entryPoints": [
+        {
+            "filePath": "main",
+            "uniqueId": "3dd3cbf2-8b09-4c75-ac9e-8b931458b2eb",
+            "type": "agent",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "json": {
+                        "type": "string"
+                    },
+                    "timeout": {
+                        "type": "integer"
+                    },
+                    "url": {
+                        "type": "string"
+                    },
+                    "tenant_id": {
+                        "type": "string"
+                    },
+                    "client_id": {
+                        "type": "string"
+                    },
+                    "client_secret": {
+                        "type": "string"
+                    },
+                    "environment_id": {
+                        "type": "string"
+                    },
+                    "flow_id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "json",
+                    "timeout"
+                ]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "json": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "json"
+                ]
+            },
+            "graph": {
+                "nodes": [
+                    {
+                        "id": "main.py:38",
+                        "name": "main",
+                        "type": "function",
+                        "metadata": {
+                            "file": "main.py"
+                        }
+                    },
+                    {
+                        "id": "run_flow_trigger.py:7",
+                        "name": "run_flow_by_trigger",
+                        "type": "function",
+                        "metadata": {
+                            "file": "run_flow_trigger.py"
+                        }
+                    },
+                    {
+                        "id": "run_flow_id.py:31",
+                        "name": "run_flow_by_id",
+                        "type": "function",
+                        "metadata": {
+                            "file": "run_flow_id.py"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "source": "main.py:38",
+                        "target": "run_flow_trigger.py:7"
+                    },
+                    {
+                        "source": "main.py:38",
+                        "target": "run_flow_id.py:31"
+                    }
+                ]
+            }
+        }
+    ]
+}

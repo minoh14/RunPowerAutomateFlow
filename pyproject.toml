@@ -1,0 +1,11 @@
+[project]
+name = "RunPowerAutomateFlow"
+version = "1.0.2"
+description = "UiPath Coded Process to run Power Automate Flows"
+authors = [{ name = "Minoh Kang", email = "minoh14@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.5",
+    "uipath>=2.10.10",
+]
